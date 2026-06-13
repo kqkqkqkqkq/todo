@@ -1,0 +1,9 @@
+ktor:
+  deployment:
+    port: 8080
+  application:
+    modules:
+      - ru.k.config.HttpKt.configureHttp
+      - ru.k.config.SerializationKt.configureSerialization
+      - ru.k.config.DIKt.configureDependencyInjection
+      - ru.k.config.RoutingKt.configureRouting
