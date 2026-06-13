@@ -1,8 +1,7 @@
 name: DAST
 
 on:
-  push:
-    branches: [ "main" ]
+
 
 jobs:
   # Job 1: Build and run Spring Boot app
