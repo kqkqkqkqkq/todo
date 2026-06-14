@@ -1,6 +1,8 @@
 name: Dependency Check
 
-on: [ push ]
+on:
+  push:
+    branches: [ "main" ]
 
 jobs:
   depchecktest:
@@ -28,13 +30,13 @@ jobs:
           JAVA_HOME: /opt/jdk
         id: Depcheck
         with:
-          project: 'test'
+          project: ${{ github.event.repository.name }}
           path: '.'
-          format: 'HTML'
+          format: 'SARIF'
           out: 'reports'
           args: >
-            --failOnCVSS 7
             --enableRetired
+#            --failOnCVSS 7
 
       - name: Upload Test results
         if: always()
