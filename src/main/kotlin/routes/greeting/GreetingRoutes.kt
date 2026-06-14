@@ -8,7 +8,11 @@ import io.ktor.server.routing.routing
 fun Application.configureGreetingRoutes() {
     routing {
         get("/") {
-            call.respondText("Hello, World!")
+            try {
+                call.respondText("Hello, World!")
+            } catch (e: Exception) {
+
+            }
         }
     }
 }

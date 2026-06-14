@@ -38,9 +38,8 @@ jobs:
             --enableRetired
 #            --failOnCVSS 7
 
-      - name: Upload Test results
+      - name: Upload SARIF report for GitHub Security tab
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: github/codeql-action/upload-sarif@v4
         with:
-          name: Depcheck report
-          path: ${{ github.workspace }}/reports
+          sarif_file: ${{ github.workspace }}/reports/dependency-check-report.sarif
