@@ -1,11 +1,16 @@
 name: DAST
 
 on:
-  workflow_dispatch:
+  push:
+    branches: [ "main" ]
 
 jobs:
   security-scan:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+      security-events: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
