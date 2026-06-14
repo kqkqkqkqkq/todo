@@ -21,7 +21,7 @@ fun Application.configureHttp() {
     install(AsyncApiPlugin) {
         extension = AsyncApiExtension.builder {
             info {
-                title("Sample API")
+                title("TODO API")
                 version("1.0.0")
             }
         }
