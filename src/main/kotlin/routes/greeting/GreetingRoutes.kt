@@ -14,7 +14,7 @@ fun Application.configureGreetingRoutes() {
             try {
                 call.respondText("Hello, World!")
             } catch (e: Exception) {
-
+                throw e
             }
         }.describe {
             summary = "Get greeting"
